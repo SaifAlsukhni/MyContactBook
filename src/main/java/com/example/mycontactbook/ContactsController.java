@@ -151,18 +151,6 @@ public class ContactsController implements Initializable {
     }
 
     @FXML
-    void tableViewSelect(MouseEvent event) {
-        Contact contact = contactTableView.getSelectionModel().getSelectedItem();
-        idText.setText("" + contact.getId());
-        firstText.setText(contact.getFirstName());
-        lastText.setText(contact.getLastName());
-        emailText.setText(contact.getEmail());
-        phoneText.setText(contact.getPhone());
-        cityText.setText(contact.getCity());
-        noteText.setText(contact.getNote());
-    }
-
-    @FXML
     void listViewSelect(MouseEvent event) {
         Contact contact = contactListView.getSelectionModel().getSelectedItem();
         idText.setText("" + contact.getId());
@@ -174,15 +162,16 @@ public class ContactsController implements Initializable {
         noteText.setText(contact.getNote());
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        viewContacts();
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                saifLabel.requestFocus();
-            }
-        });
+    @FXML
+    void tableViewSelect(MouseEvent event) {
+        Contact contact = contactTableView.getSelectionModel().getSelectedItem();
+        idText.setText("" + contact.getId());
+        firstText.setText(contact.getFirstName());
+        lastText.setText(contact.getLastName());
+        emailText.setText(contact.getEmail());
+        phoneText.setText(contact.getPhone());
+        cityText.setText(contact.getCity());
+        noteText.setText(contact.getNote());
     }
 
     public Connection getConnection() {
@@ -343,15 +332,6 @@ public class ContactsController implements Initializable {
         contactTableView.setItems(contactSortedList);
         contactListView.setItems(contactSortedList);
     }
-    private void clearText() {
-        firstText.clear();
-        lastText.clear();
-        emailText.clear();
-        phoneText.clear();
-        cityText.clear();
-        noteText.clear();
-        searchText.clear();
-    }
 
     private void saveToCSV() {
         Connection con = getConnection();
@@ -388,4 +368,24 @@ public class ContactsController implements Initializable {
         viewContacts();
     }
 
+    private void clearText() {
+        firstText.clear();
+        lastText.clear();
+        emailText.clear();
+        phoneText.clear();
+        cityText.clear();
+        noteText.clear();
+        searchText.clear();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        viewContacts();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                saifLabel.requestFocus();
+            }
+        });
+    }
 }
