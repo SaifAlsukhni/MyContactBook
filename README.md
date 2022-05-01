@@ -21,3 +21,4 @@ MyContactBook uses Timestamp and JavaFX ListView to fulfill the content not cove
 
 
 # **This application can be started by running the Main.java file.**
+Main.java is located at src/main/java/com/example/mycontactbook/Main.java
