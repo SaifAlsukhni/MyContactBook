@@ -1,6 +1,6 @@
 # MyContactBook
 
-MyContactBook is a contact book application featuring a JavaFX GUI.  Contacts can be added, updated, and deleted. All data is stored in a self-contained SQLite database.  This application also uses a Model View Controller (MVC) class structure and design pattern.  The Contact file is the model, the ContactsController is the controller, and Main/ContactBookGUI function as the view.  
+MyContactBook is a contact book application featuring a JavaFX GUI.  Contacts can be added, updated, and deleted. All data is stored in a self-contained database.  This application also uses a Model View Controller (MVC) class structure and design pattern.  The Contact file is the model, the ContactsController is the controller, and Main/ContactBookGUI function as the view.  
 
 MyContactBook uses Timestamp and JavaFX ListView to fulfill the content not covered in class requirement.  Timestamp is used to log when a contact is added.  JavaFX ListView is used to display the list of added contacts.  JavaFX TableView is used to display a sortable list of contacts.  JavaFX Alerts were used to notify the user of successful add, update, or delete actions.  An inner class and lambda expressions are used in the controller (ContactsController) for the events, buttons, and search filter.  The app can also write the Contact list into a CSV file for sharing.
 
